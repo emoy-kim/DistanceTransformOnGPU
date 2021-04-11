@@ -6,6 +6,5 @@ This code is based on [1], and is refactored and modified for C++ code including
 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/17864157/114296406-3eb2e880-9ae6-11eb-966a-3462e20d04c1.png" width="50%" height="50%" title="horse" />
-Original Image
+<img src="https://user-images.githubusercontent.com/17864157/114297079-930b9780-9ae9-11eb-985d-41a079eaff59.png" width="100%" height="100%" title="horse" />
 </p>
