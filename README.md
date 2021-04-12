@@ -10,5 +10,5 @@ This code is based on [1], and refactored and modified for C++ code including pa
 
     
 <p align="center">
-<img src="https://user-images.githubusercontent.com/17864157/114297079-930b9780-9ae9-11eb-985d-41a079eaff59.png" width="100%" height="100%" title="horse" />
+<img src="https://user-images.githubusercontent.com/17864157/114333316-fac1f100-9b82-11eb-8f34-f7e4e183589a.png" width="100%" height="100%" title="horse" />
 </p>
