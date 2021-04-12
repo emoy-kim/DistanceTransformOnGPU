@@ -157,4 +157,5 @@ void DistanceTransformShaderGL::setUniformLocations()
    Location.Texture[0] = glGetUniformLocation( ComputeShaderPrograms[0], "Image" );
 
    addUniformLocationToComputeShader( "Phase", 0 );
+   addUniformLocationToComputeShader( "DistanceType", 0 );
 }

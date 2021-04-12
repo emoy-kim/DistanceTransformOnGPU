@@ -18,10 +18,13 @@ public:
    void play();
 
 private:
+   enum class DISTANCE_TYPE { EUCLIDEAN = 1, MANHATTAN, CHESSBOARD };
+
    inline static RendererGL* Renderer = nullptr;
    GLFWwindow* Window;
    int FrameWidth;
    int FrameHeight;
+   DISTANCE_TYPE DistanceType;
    std::unique_ptr<CameraGL> MainCamera;
    std::unique_ptr<ShaderGL> ObjectShader;
    std::unique_ptr<ShaderGL> FieldShader;

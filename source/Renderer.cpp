@@ -1,10 +1,11 @@
 #include "Renderer.h"
 
 RendererGL::RendererGL() : 
-   Window( nullptr ), FrameWidth( 1920 ), FrameHeight( 1080 ), MainCamera( std::make_unique<CameraGL>() ),
-   ObjectShader( std::make_unique<ShaderGL>() ), FieldShader( std::make_unique<ShaderGL>() ),
-   DistanceTransformShader( std::make_unique<DistanceTransformShaderGL>() ), ImageObject( std::make_unique<ObjectGL>() ),
-   DistanceObject( std::make_unique<ObjectGL>() ), Canvas( std::make_unique<CanvasGL>() )
+   Window( nullptr ), FrameWidth( 1920 ), FrameHeight( 1080 ), DistanceType( DISTANCE_TYPE::EUCLIDEAN ),
+   MainCamera( std::make_unique<CameraGL>() ), ObjectShader( std::make_unique<ShaderGL>() ),
+   FieldShader( std::make_unique<ShaderGL>() ), DistanceTransformShader( std::make_unique<DistanceTransformShaderGL>() ),
+   ImageObject( std::make_unique<ObjectGL>() ), DistanceObject( std::make_unique<ObjectGL>() ),
+   Canvas( std::make_unique<CanvasGL>() )
 {
    Renderer = this;
 
@@ -78,6 +79,15 @@ void RendererGL::keyboard(GLFWwindow* window, int key, int scancode, int action,
    if (action != GLFW_PRESS) return;
 
    switch (key) {
+      case GLFW_KEY_1:
+         DistanceType = DISTANCE_TYPE::EUCLIDEAN;
+         break;
+      case GLFW_KEY_2:
+         DistanceType = DISTANCE_TYPE::MANHATTAN;
+         break;
+      case GLFW_KEY_3:
+         DistanceType = DISTANCE_TYPE::CHESSBOARD;
+         break;
       case GLFW_KEY_Q:
       case GLFW_KEY_ESCAPE:
          cleanupWrapper( window );
@@ -204,6 +214,7 @@ void RendererGL::drawDistanceField()
    glDispatchCompute( getGroupSize( FrameHeight ), 1, 1 );
    glMemoryBarrier( GL_SHADER_STORAGE_BARRIER_BIT | GL_SHADER_IMAGE_ACCESS_BARRIER_BIT );
    DistanceTransformShader->uniform1i( "Phase", 2, 0 );
+   DistanceTransformShader->uniform1i( "DistanceType", static_cast<int>(DistanceType), 0 );
    glDispatchCompute( getGroupSize( FrameWidth ), 1, 1 );
    glMemoryBarrier( GL_SHADER_STORAGE_BARRIER_BIT | GL_SHADER_IMAGE_ACCESS_BARRIER_BIT );
 

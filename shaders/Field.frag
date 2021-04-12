@@ -23,7 +23,8 @@ void main()
           180 < distance && distance <= 200 || 230 < distance && distance <= 250 || 280 < distance && distance <= 300 ||
           330 < distance && distance <= 350 || 380 < distance && distance <= 400 || 430 < distance && distance <= 450 ||
           480 < distance && distance <= 500 || 530 < distance && distance <= 550 || 580 < distance && distance <= 600 ||
-          630 < distance && distance <= 650 || 680 < distance && distance <= 700) {
+          630 < distance && distance <= 650 || 680 < distance && distance <= 700 || 730 < distance && distance <= 750 ||
+          780 < distance && distance <= 800 || 830 < distance && distance <= 850 || 880 < distance && distance <= 900) {
          float alpha = (one - float(distance) / 2500.0f);
          vec3 outline_color = vec3(one, 0.53f, 0.5f);
          final_color = vec4(outline_color * alpha, one);
