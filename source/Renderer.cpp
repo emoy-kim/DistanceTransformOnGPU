@@ -13,11 +13,6 @@ RendererGL::RendererGL() :
    printOpenGLInformation();
 }
 
-RendererGL::~RendererGL()
-{
-   //glfwTerminate();
-}
-
 void RendererGL::printOpenGLInformation()
 {
    std::cout << "****************************************************************\n";
@@ -150,7 +145,7 @@ void RendererGL::setImageObject() const
       { 0.0f, 1.0f },
       { 0.0f, 0.0f }
    };
-   ImageObject->setObject( GL_TRIANGLES, vertices, normals, textures, "../horse.png" );
+   ImageObject->setObject( GL_TRIANGLES, vertices, normals, textures, "../test.png" );
 }
 
 void RendererGL::setDistanceObject() const
