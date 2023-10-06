@@ -33,7 +33,7 @@ int dt(in int x, in int i, in int g)
 
 int sep(in int i, in int u, in int g_i, in int g_u)
 {
-   if (DistanceType == 1) return int(floor( (u * u - i * i + g_u * g_u - g_i * g_i) / (2.0f * (u - i)) ));
+   if (DistanceType == 1) return int(round( ((u + i) * (u - i) + (g_u + g_i) * (g_u - g_i)) / (2.0f * (u - i)) ));
    else if (DistanceType == 2) {
       if (g_u >= (g_i + u - i)) return max_distance;
       if (g_i > (g_u + u - i)) return -max_distance;
