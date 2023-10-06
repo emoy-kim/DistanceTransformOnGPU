@@ -145,7 +145,7 @@ void RendererGL::setImageObject() const
       { 0.0f, 1.0f },
       { 0.0f, 0.0f }
    };
-   ImageObject->setObject( GL_TRIANGLES, vertices, normals, textures, "../test.png" );
+   ImageObject->setObject( GL_TRIANGLES, vertices, normals, textures, "../horse.png" );
 }
 
 void RendererGL::setDistanceObject() const
